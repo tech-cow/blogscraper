@@ -5,10 +5,12 @@ with open('blog.html') as html_file:
     soup = BeautifulSoup(html_file, 'lxml')
 
 content = {
-        'Quote' : '',
-        'Introduction' : '',
+        'quote' : '',
+        'introduction' : '',
         'p.s.?' : ''
 }
 
-for key, val in content.items():
-    print(key + ':' + val)
+content = soup.find('div', class_= "twelve wide computer twelve wide tablet column main text")
+article = content.find('div', class_='item')
+
+img_source = article.
